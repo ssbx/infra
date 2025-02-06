@@ -1,5 +1,5 @@
 
-FROM debian12:ansible
+FROM debian:12
 
 RUN \
   apt-get update && \

@@ -1,9 +1,11 @@
+run: build
+	sudo docker container run --volume $(PWD):/data \
+    -it ansible_runner /bin/bash
+
 build:
-	sudo docker build -t ansible:latest .
+	sudo docker build -t ansible_runner .
 
-lst:
-	sudo docker images -a
-
-prune:
-	sudo docker prune --volumes
+clean:
+	sudo docker system prune --volumes
+	sudo docker image rm -a
 
